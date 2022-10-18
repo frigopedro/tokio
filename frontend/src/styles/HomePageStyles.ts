@@ -120,6 +120,9 @@ export const Container = styled.div`
       height: 50vh;
       top: clamp(450px, 50%, 50%);
       padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
       > main {
         display: block;
       }
@@ -127,8 +130,19 @@ export const Container = styled.div`
         color: #f1f1f1;
       }
     }
+    .building-image-mobile {
+      display: none;
+      @media (max-width: 768px) {
+        margin-top: auto;
+        display: block;
+        width: 100vw;
+      }
+    }
     .building-image {
       width: 100vw;
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
   }
 `;

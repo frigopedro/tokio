@@ -16,6 +16,8 @@ export default function Home() {
             </p>
           </section>
         </Grid>
+
+        <img className="building-image-mobile" src="/icons/building.png" />
       </div>
       <img className="building-image" src="/icons/building.png" />
       <Grid>
