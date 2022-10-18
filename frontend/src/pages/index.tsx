@@ -55,7 +55,7 @@ export default function Home() {
                     openInNewTab(
                       "whatsapp://send?text=" +
                         "Gostaria de fazer um orçamento" +
-                        "&phone=11998832184"
+                        "&phone=+5511989076923"
                     );
                   }}
                 >
