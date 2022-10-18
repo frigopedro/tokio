@@ -114,9 +114,11 @@ export const Container = styled.div`
       h1 {
         font-size: 2.5rem;
         max-width: 100%;
+        text-align: center;
       }
       > div {
-        margin-top: 1rem;
+        justify-content: space-around;
+        margin-top: 2rem;
       }
     }
     .dark-background {

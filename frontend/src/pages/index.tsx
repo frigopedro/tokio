@@ -1,8 +1,13 @@
 import React from "react";
 import Grid from "../components/Grid";
 import { Container } from "../styles/HomePageStyles";
+import ReactWhatsapp from "react-whatsapp";
 
 export default function Home() {
+  const openInNewTab = (url: string) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <Container>
       <div className="dark-background">
@@ -44,7 +49,18 @@ export default function Home() {
               <h1>Consultoria de engenharia civil certa para você</h1>
 
               <div>
-                <button className="main-button">Entre em contato</button>
+                <button
+                  className="main-button"
+                  onClick={() => {
+                    openInNewTab(
+                      "whatsapp://send?text=" +
+                        "Gostaria de fazer um orçamento" +
+                        "&phone=11998832184"
+                    );
+                  }}
+                >
+                  Faça um orçamento
+                </button>
                 <button className="secondary-button">
                   Conheça nossos serviços
                 </button>
