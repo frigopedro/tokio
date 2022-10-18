@@ -51,7 +51,7 @@ export default function Home() {
                     openInNewTab(
                       "whatsapp://send?text=" +
                         "Gostaria de fazer um orçamento" +
-                        "&phone=+5511989076923"
+                        "&phone=+5511911647651"
                     );
                   }}
                 >
@@ -67,9 +67,9 @@ export default function Home() {
           <section>
             <img src="/icons/star.svg" />
             <p>
-              A Tokio é uma empresa do ramo de Engenharia Civil localizada em
-              São Bernardo do Campo, que oferece serviços de projetos,
-              construção, reformas comercial/industrial, e laudos técnicos.
+              Tokio é uma empresa do ramo de Engenharia Civil, que oferece
+              serviços de gerenciamento de obras, projetos, construção, reformas
+              comercial/industrial, e laudos técnicos.
             </p>
           </section>
         </section>

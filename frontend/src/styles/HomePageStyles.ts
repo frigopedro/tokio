@@ -99,6 +99,7 @@ export const Container = styled.div`
       flex-direction: column;
       justify-content: start;
       align-items: flex-start;
+
       > section {
         display: none;
       }
@@ -140,6 +141,10 @@ export const Container = styled.div`
       @media (max-width: 768px) {
         display: none;
       }
+    }
+
+    .user-container {
+      margin: 0 auto;
     }
   }
 `;
