@@ -96,6 +96,10 @@ export const Container = styled.div`
     }
   }
 
+  .building-image-mobile {
+    display: none;
+    width: 0px;
+  }
   @media (max-width: 768px) {
     .first-container {
       margin-top: 1rem;
@@ -131,13 +135,11 @@ export const Container = styled.div`
       }
     }
     .building-image-mobile {
-      display: none;
-      @media (max-width: 768px) {
-        margin-top: auto;
-        display: block;
-        width: 100vw;
-      }
+      margin-top: auto;
+      display: flex;
+      width: 100vw;
     }
+
     .building-image {
       width: 100vw;
       @media (max-width: 768px) {
