@@ -37,14 +37,8 @@ export default function Home() {
       <Grid>
         <section className="first-container">
           <aside>
-            <section>
-              <aside className="user-container">
-                <img src="/icons/rafael.png" />
-                <div>
-                  <h1>Rafael Marques Amaral</h1>
-                  <p>Engenheiro Civil</p>
-                </div>
-              </aside>
+            <section className="user-container">
+              <p>Projetos de alto padrão</p>
             </section>
 
             <div className="main-text">

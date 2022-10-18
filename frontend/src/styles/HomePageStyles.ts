@@ -17,7 +17,7 @@ export const Container = styled.div`
     z-index: -3;
     right: 0%;
     bottom: 0%;
-    width: 60vw;
+    width: 50vw;
     max-width: 1250px;
   }
 
@@ -34,19 +34,12 @@ export const Container = styled.div`
     }
   }
   .user-container {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-
-    > img {
-      width: 70px;
-    }
-
-    h1 {
-      font-size: 16px;
-    }
-    p {
-      font-size: 14px;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #333333;
+    border-radius: 100px;
+    display: inline-block;
+    > p {
+      color: #333333;
     }
   }
 
@@ -84,10 +77,10 @@ export const Container = styled.div`
     margin-top: 50px;
 
     > section {
-      margin-top: 200px;
+      margin-top: 10vh;
       max-width: 332px;
       background-color: #161616;
-      max-height: 300px;
+      max-height: 220px;
       border-radius: 25px;
       padding: 1rem;
       p {
