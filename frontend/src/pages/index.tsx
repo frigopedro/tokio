@@ -336,6 +336,10 @@ export default function Home() {
                 Uma empresa do ramo de Engenharia Civil, que oferece serviços de
                 gerenciamento de obras, projetos, construção e reformas.
               </p>
+              <address>
+                Rua Édson de Castro pinto, 43 - Vila Olímpia-SP <br /> CEP:
+                04545-070
+              </address>
             </div>
             {process.env.NEXT_PUBLIC_ENV !== "production" && (
               <div>
@@ -358,13 +362,23 @@ export default function Home() {
                 href="mailto:contato@tokioengenharia.com.br?subject=Orçamento Tokio Engenharia&body=Olá, gostaria de fazer um orçamento"
                 className="contato"
               >
-                Enviar email
+                Email
+              </a>
+              <a
+                href={
+                  "whatsapp://send?text=" +
+                  "Gostaria de fazer um orçamento" +
+                  "&phone=+5511911647651"
+                }
+                className="contato"
+              >
+                Whatsapp
               </a>
             </div>
           </section>
           <p className="copyright">
             &copy; Todos os direitos reservados {new Date().getFullYear()} •
-            Tokio Engenharia
+            Tokio Engenharia <br />
           </p>
         </Footer>
       </Grid>

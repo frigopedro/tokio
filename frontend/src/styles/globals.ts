@@ -39,7 +39,7 @@ html{
 ::-webkit-scrollbar-thumb {
   border-radius: 33333px;
 
-  background: rgba(255, 255, 255, 0.5);
+  background: ${(props) => props.theme.colors.black500};
   position: fixed !important;
 
   
@@ -47,7 +47,7 @@ html{
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background: ${(props) => props.theme.colors.text};
 
 }
 html{
@@ -98,6 +98,11 @@ a{
     color: ${(props) => props.theme.colors.lightText};
     font-weight: 400;
     font-size: 1rem;
+  }
+  address{
+    color: ${(props) => props.theme.colors.lightText};
+    font-size: 0.8rem;
+
   }
   button {
     cursor: pointer;
