@@ -148,3 +148,95 @@ export const Container = styled.div`
     }
   }
 `;
+
+export const SecondSection = styled.div`
+  margin-top: 300px;
+
+  @media (max-width: 768px) {
+    margin-top: 650px;
+  }
+  main {
+    > div {
+      margin: 0 auto;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h1 {
+        font-size: 2rem;
+      }
+      > p {
+        text-align: center;
+      }
+    }
+
+    > section {
+      margin-top: 100px;
+      height: 300vh;
+      display: flex;
+      justify-content: space-between;
+
+      > aside {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 2rem;
+        > section {
+          flex: 1;
+          > div {
+            position: sticky;
+            top: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 500px;
+            > p {
+              text-align: center;
+            }
+            > h1 {
+              font-size: 1.2rem;
+              position: sticky;
+            }
+          }
+        }
+
+        > img {
+          display: none;
+        }
+      }
+      > div {
+        position: sticky;
+        top: 400px;
+        max-width: 900px;
+        max-height: 600px;
+        overflow: hidden;
+
+        img {
+          max-width: 800px;
+          max-height: 600px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        > aside {
+          height: 300vh;
+          gap: 3rem;
+          > img {
+            display: block;
+            width: 100%;
+            position: sticky;
+            bottom: 0;
+          }
+        }
+        > div {
+          display: none;
+          position: sticky;
+          bottom: 0;
+        }
+      }
+    }
+  }
+`;
+
+export const ThirdSection = styled.div``;

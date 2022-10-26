@@ -1,12 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Grid from "../components/Grid";
-import { Container } from "../styles/HomePageStyles";
+import {
+  Container,
+  SecondSection,
+  ThirdSection,
+} from "../styles/HomePageStyles";
 import ReactWhatsapp from "react-whatsapp";
+import Typed from "react-typed";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { gsap, TimelineLite } from "gsap";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const openInNewTab = (url: string) => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
+
+  useEffect(() => {
+    // gsap.to(".service-list1", {
+    //   opacity: 0,
+    //   scrollTrigger: {
+    //     trigger: ".service-list1",
+    //     start: "top 20%",
+    //     end: "+=100",
+    //     scrub: true,
+    //     markers: true,
+    //   },
+    // });
+  });
 
   return (
     <Container>
@@ -42,7 +64,7 @@ export default function Home() {
             </section>
 
             <div className="main-text">
-              <h1>Consultoria de engenharia civil certa para você</h1>
+              <h1>A consultoria de engenharia civil certa para você</h1>
 
               <div>
                 <button
@@ -74,6 +96,78 @@ export default function Home() {
           </section>
         </section>
       </Grid>
+
+      <SecondSection>
+        <Grid>
+          <div>
+            <h1>Nosso serviços</h1>
+            <p>
+              Conheça nosso serviços e como a tókio pode te ajudar a construir
+              seu sonho
+            </p>
+          </div>
+
+          <section>
+            <aside>
+              <section>
+                <div className="services-list1">
+                  <h1>Alvenaria</h1>
+                  <p>
+                    Et aliquip ad consectetur qui velit enim ea quis excepteur
+                    laborum occaecat ea minim est.
+                  </p>
+                </div>
+              </section>
+
+              <section>
+                <div className="services-list">
+                  <h1>Fundação</h1>
+                  <p>
+                    Et aliquip ad consectetur qui velit enim ea quis excepteur
+                    laborum occaecat ea minim est.
+                  </p>
+                </div>
+              </section>
+
+              <section>
+                <div className="services-list">
+                  <h1>Contenção</h1>
+                  <p>
+                    Et aliquip ad consectetur qui velit enim ea quis excepteur
+                    laborum occaecat ea minim est.
+                  </p>
+                </div>
+              </section>
+
+              <section>
+                <div className="services-list">
+                  <h1>Estrutura metálica</h1>
+                  <p>
+                    Et aliquip ad consectetur qui velit enim ea quis excepteur
+                    laborum occaecat ea minim est.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <div className="services-list">
+                  <h1>E muito mais</h1>
+                  <p>
+                    Et aliquip ad consectetur qui velit enim ea quis excepteur
+                    laborum occaecat ea minim est.
+                  </p>
+                </div>
+              </section>
+              <img src="/images/building.png" />
+            </aside>
+
+            <div>
+              <img src="/images/building.png" />
+            </div>
+          </section>
+        </Grid>
+      </SecondSection>
+
+      <ThirdSection></ThirdSection>
     </Container>
   );
 }
