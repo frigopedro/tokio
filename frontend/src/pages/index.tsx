@@ -285,7 +285,10 @@ export default function Home() {
                   </p>
                 </div>
               </section>
-              <img src="/images/building.png" />
+              <div>
+                <div className="gradient" />
+                <img src="/images/building.png" />
+              </div>
             </aside>
 
             <div>

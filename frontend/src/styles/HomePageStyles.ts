@@ -201,7 +201,7 @@ export const SecondSection = styled.div`
           }
         }
 
-        > img {
+        > div {
           display: none;
         }
       }
@@ -223,17 +223,31 @@ export const SecondSection = styled.div`
         > aside {
           height: 300vh;
           gap: 3rem;
-          > img {
+          > div {
             display: block;
             width: 100%;
             position: sticky;
             bottom: 0;
+            > div {
+              width: 100%;
+              height: 300px;
+              position: relative;
+              top: 0;
+              background: linear-gradient(
+                0deg,
+                #f2f2f2 7.21%,
+                rgba(242, 242, 242, 0.25) 103.66%
+              );
+              z-index: -1;
+            }
+            > img {
+              margin-top: -300px;
+              width: 100%;
+            }
           }
         }
         > div {
           display: none;
-          position: sticky;
-          bottom: 0;
         }
       }
     }
@@ -259,6 +273,7 @@ export const ThirdSection = styled.div`
       gap: 3rem;
       align-items: center;
       justify-content: space-between;
+
       > img {
         width: 40vw;
         height: 40vw;
