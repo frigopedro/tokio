@@ -6,6 +6,7 @@ scroll-behavior: smooth;
 
 html{
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
   * {
     margin: 0;
@@ -89,7 +90,9 @@ html {
     font-size: 1.125rem;
   }
 
-
+a{
+  cursor: pointer;
+}
   
   p{
     color: ${(props) => props.theme.colors.lightText};

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Grid from "../components/Grid";
 import {
   Container,
@@ -12,6 +12,12 @@ import { gsap, TimelineLite } from "gsap";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
+  const servicesReference = useRef(null);
+  const valoresReference = useRef(null);
+  const firstSection = useRef(null);
+  const executeScroll = (reference: any) =>
+    reference && reference.current.scrollIntoView();
+
   const openInNewTab = (url: string) => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
@@ -149,7 +155,7 @@ export default function Home() {
 
   return (
     <Container>
-      <div className="dark-background">
+      <div className="dark-background" ref={firstSection}>
         <Grid>
           <section className="company-description">
             <img src="/icons/star.svg" />
@@ -198,7 +204,10 @@ export default function Home() {
                 >
                   Faça um orçamento
                 </button>
-                <button className="secondary-button">
+                <button
+                  className="secondary-button"
+                  onClick={() => executeScroll(servicesReference)}
+                >
                   Conheça nossos serviços
                 </button>
               </div>
@@ -218,7 +227,7 @@ export default function Home() {
 
       <SecondSection>
         <Grid>
-          <div>
+          <div ref={servicesReference}>
             <h1>Nosso serviços</h1>
             <p>
               Conheça nosso serviços e como a tókio pode te ajudar a construir
@@ -288,7 +297,7 @@ export default function Home() {
 
       <ThirdSection>
         <Grid>
-          <section>
+          <section ref={valoresReference}>
             <img
               src="/images/valores.png"
               alt="imagem de prédio"
@@ -296,8 +305,8 @@ export default function Home() {
             />
 
             <aside className="first-vision-text">
-              <h1>Nossos valores</h1>
-              <p>
+              <h1 style={{ textAlign: "end" }}>Nossos valores</h1>
+              <p style={{ textAlign: "end" }}>
                 Visamos integridade, respeito, ousadia, sucesso, rentabilidade e
                 relacionamento humano.
               </p>
@@ -329,16 +338,23 @@ export default function Home() {
               <div>
                 <h1>Conheça</h1>
 
-                <p>O que somos?</p>
-                <p>Nossos serviços</p>
-                <p>Nossos valores</p>
+                <a onClick={() => executeScroll(firstSection)}>O que somos?</a>
+                <a onClick={() => executeScroll(servicesReference)}>
+                  Nossos serviços
+                </a>
+                <a onClick={() => executeScroll(valoresReference)}>
+                  Nossos valores
+                </a>
               </div>
             )}
 
             <div>
               <h1>Contate-nos</h1>
 
-              <a href="mailto:contato@tokioengenharia.com.br?subject=Orçamento Tokio Engenharia&body=Olá, gostaria de fazer um orçamento">
+              <a
+                href="mailto:contato@tokioengenharia.com.br?subject=Orçamento Tokio Engenharia&body=Olá, gostaria de fazer um orçamento"
+                className="contato"
+              >
                 Enviar email
               </a>
             </div>

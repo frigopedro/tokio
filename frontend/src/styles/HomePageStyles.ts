@@ -278,6 +278,18 @@ export const ThirdSection = styled.div`
       }
     }
   }
+
+  @media (max-width: 768px) {
+    > main {
+      > section {
+        gap: 0.5rem;
+
+        > img {
+          border: 5px solid #f1f1f120;
+        }
+      }
+    }
+  }
 `;
 
 export const Footer = styled.footer`
@@ -294,11 +306,17 @@ export const Footer = styled.footer`
     gap: 1rem;
     > div {
       max-width: 400px;
+      display: flex;
+      flex-direction: column;
     }
   }
 
   a {
     text-decoration: none;
+    color: ${(props) => props.theme.colors.lightText};
+  }
+
+  .contato {
     color: #fc6b24;
   }
   .copyright {
