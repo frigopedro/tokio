@@ -5,8 +5,6 @@ import {
   SecondSection,
   ThirdSection,
 } from "../styles/HomePageStyles";
-import ReactWhatsapp from "react-whatsapp";
-import Typed from "react-typed";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { gsap, TimelineLite } from "gsap";
 
