@@ -16,23 +16,68 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // gsap.to(".service-list1", {
-    //   opacity: 0,
-    //   scrollTrigger: {
-    //     trigger: ".service-list1",
-    //     start: "top 20%",
-    //     end: "+=100",
-    //     scrub: true,
-    //     markers: true,
-    //   },
-    // });
+    let tl = new TimelineLite();
+    let tl2 = new TimelineLite();
+
+    tl.fromTo(
+      ".main-text-h1",
+      {
+        opacity: 0,
+        x: -100,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+      }
+    )
+      .fromTo(
+        ".main-button",
+        {
+          opacity: 0,
+          x: -50,
+        },
+        {
+          opacity: 1,
+          x: 0,
+        }
+      )
+      .fromTo(
+        ".secondary-button",
+        {
+          opacity: 0,
+          x: -50,
+        },
+        {
+          opacity: 1,
+          x: 0,
+        }
+      );
+
+    tl2
+      .fromTo(
+        [".building-image", ".building-image-mobile"],
+        {
+          opacity: 0,
+          y: 200,
+        },
+        {
+          opacity: 1,
+          y: 0,
+        }
+      )
+      .fromTo(
+        ".company-description",
+        { opacity: 0, y: 100 },
+        { opacity: 1, y: 0 }
+      );
   });
 
   return (
     <Container>
       <div className="dark-background">
         <Grid>
-          <section>
+          <section className="company-description">
             <img src="/icons/star.svg" />
             <p>
               A Tokio é uma empresa do ramo de Engenharia Civil localizada em
@@ -62,7 +107,9 @@ export default function Home() {
             </section>
 
             <div className="main-text">
-              <h1>A consultoria de engenharia civil certa para você</h1>
+              <h1 className="main-text-h1">
+                A consultoria de engenharia civil certa para você
+              </h1>
 
               <div>
                 <button
@@ -84,7 +131,7 @@ export default function Home() {
             </div>
           </aside>
 
-          <section>
+          <section className="company-description">
             <img src="/icons/star.svg" />
             <p>
               Tokio é uma empresa do ramo de Engenharia Civil, que oferece
