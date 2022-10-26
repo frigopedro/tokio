@@ -297,9 +297,6 @@ export const Footer = styled.footer`
     }
   }
 
-  h1 {
-    font-size: 1.5rem;
-  }
   a {
     text-decoration: none;
     color: #fc6b24;

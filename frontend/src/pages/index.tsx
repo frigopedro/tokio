@@ -311,7 +311,7 @@ export default function Home() {
                 confiança no mercado e inspirando seus colaboradores e clientes.
               </p>
             </aside>
-            <img src="/images/valores.png" alt="imagem de prédio" />
+            <img src="/images/visao.png" alt="imagem de prédio" />
           </section>
         </Grid>
       </ThirdSection>
