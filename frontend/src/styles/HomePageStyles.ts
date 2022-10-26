@@ -180,6 +180,7 @@ export const SecondSection = styled.div`
         display: flex;
         justify-content: space-between;
         flex-direction: column;
+        align-items: center;
         gap: 2rem;
         > section {
           flex: 1;
@@ -239,4 +240,72 @@ export const SecondSection = styled.div`
   }
 `;
 
-export const ThirdSection = styled.div``;
+export const ThirdSection = styled.div`
+  background-color: #161616;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+  > main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    > section {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      justify-content: space-between;
+      > img {
+        width: 40vw;
+        height: 40vw;
+        max-width: 500px;
+        max-height: 500px;
+        border-radius: 12px;
+        border: 12px solid #f1f1f120;
+      }
+      > aside {
+        max-width: 600px;
+      }
+      p {
+        color: #f1f1f190;
+      }
+      h1 {
+        color: #f1f1f1;
+      }
+    }
+  }
+`;
+
+export const Footer = styled.footer`
+  width: 100%;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+
+  section {
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 1rem;
+    gap: 1rem;
+    > div {
+      max-width: 400px;
+    }
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+  a {
+    text-decoration: none;
+    color: #fc6b24;
+  }
+  .copyright {
+    margin-top: 3rem;
+    margin-bottom: -1rem;
+  }
+`;

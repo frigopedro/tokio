@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Grid from "../components/Grid";
 import {
   Container,
+  Footer,
   SecondSection,
   ThirdSection,
 } from "../styles/HomePageStyles";
@@ -71,6 +72,79 @@ export default function Home() {
         { opacity: 0, y: 100 },
         { opacity: 1, y: 0 }
       );
+
+    gsap.fromTo(
+      ".first-vision-text",
+      {
+        opacity: 0,
+        y: 200,
+      },
+      {
+        opacity: 1,
+        y: 0,
+
+        scrollTrigger: {
+          trigger: ".first-vision-text",
+          start: "top 80%",
+          end: "bottom 50%",
+          scrub: true,
+        },
+      }
+    );
+    gsap.fromTo(
+      ".first-vision-image",
+      {
+        opacity: 0,
+        x: -200,
+      },
+      {
+        opacity: 1,
+        x: 0,
+
+        scrollTrigger: {
+          trigger: ".first-vision-image",
+          start: "top 80%",
+          end: "bottom 50%",
+          scrub: true,
+        },
+      }
+    );
+    gsap.fromTo(
+      ".second-vision-text",
+      {
+        opacity: 0,
+        y: 200,
+      },
+      {
+        opacity: 1,
+        y: 0,
+
+        scrollTrigger: {
+          trigger: ".second-vision-text",
+          start: "top 80%",
+          end: "top 50%",
+          scrub: true,
+        },
+      }
+    );
+    gsap.fromTo(
+      ".second-vision-image",
+      {
+        opacity: 0,
+        x: 200,
+      },
+      {
+        opacity: 1,
+        x: 0,
+
+        scrollTrigger: {
+          trigger: ".second-vision-image",
+          start: "top 80%",
+          end: "bottom 50%",
+          scrub: true,
+        },
+      }
+    );
   });
 
   return (
@@ -212,7 +286,69 @@ export default function Home() {
         </Grid>
       </SecondSection>
 
-      <ThirdSection></ThirdSection>
+      <ThirdSection>
+        <Grid>
+          <section>
+            <img
+              src="/images/valores.png"
+              alt="imagem de prédio"
+              className="first-vision-image"
+            />
+
+            <aside className="first-vision-text">
+              <h1>Nossos valores</h1>
+              <p>
+                Visamos integridade, respeito, ousadia, sucesso, rentabilidade e
+                relacionamento humano.
+              </p>
+            </aside>
+          </section>
+          <section className="second-vision-image">
+            <aside className="second-vision-text">
+              <h1>Nossa visão</h1>
+              <p>
+                Uma empresa de destaque no que faz, com reconhecimento e
+                confiança no mercado e inspirando seus colaboradores e clientes.
+              </p>
+            </aside>
+            <img src="/images/valores.png" alt="imagem de prédio" />
+          </section>
+        </Grid>
+      </ThirdSection>
+      <Grid>
+        <Footer>
+          <section>
+            <div>
+              <h1>Tokio engenharia</h1>
+              <p>
+                Uma empresa do ramo de Engenharia Civil, que oferece serviços de
+                gerenciamento de obras, projetos, construção e reformas.
+              </p>
+            </div>
+            {process.env.NEXT_PUBLIC_ENV !== "production" && (
+              <div>
+                <h1>Conheça</h1>
+
+                <p>O que somos?</p>
+                <p>Nossos serviços</p>
+                <p>Nossos valores</p>
+              </div>
+            )}
+
+            <div>
+              <h1>Contate-nos</h1>
+
+              <a href="mailto:contato@tokioengenharia.com.br?subject=Orçamento Tokio Engenharia&body=Olá, gostaria de fazer um orçamento">
+                Enviar email
+              </a>
+            </div>
+          </section>
+          <p className="copyright">
+            &copy; Todos os direitos reservados {new Date().getFullYear()} •
+            Tokio Engenharia
+          </p>
+        </Footer>
+      </Grid>
     </Container>
   );
 }
