@@ -235,7 +235,7 @@ export const SecondSection = styled.div`
               top: 0;
               background: linear-gradient(
                 0deg,
-                #f2f2f2 7.21%,
+                #f2f2f2 56.18%,
                 rgba(242, 242, 242, 0.25) 103.66%
               );
               z-index: -1;
