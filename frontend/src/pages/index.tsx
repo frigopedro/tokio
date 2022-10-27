@@ -191,7 +191,7 @@ export default function Home() {
       <div className="dark-background" ref={firstSection}>
         <Grid>
           <section className="company-description">
-            <img src="/icons/star.svg" />
+            <img src="/icons/star.svg" alt="Ícone de estrela" loading="lazy" />
             <p>
               A Tokio é uma empresa do ramo de Engenharia Civil localizada em
               São Bernardo do Campo, que oferece serviços de projetos,
@@ -200,12 +200,26 @@ export default function Home() {
           </section>
         </Grid>
 
-        <img className="building-image-mobile" src="/icons/building.png" />
+        <img
+          className="building-image-mobile"
+          src="/icons/building.png"
+          alt="Imagem de construção"
+          loading="lazy"
+        />
       </div>
-      <img className="building-image" src="/icons/building.png" />
+      <img
+        className="building-image"
+        src="/icons/building.png"
+        alt="Imagem de construção"
+        loading="lazy"
+      />
       <Grid>
         <div className="header">
-          <img src="/icons/logo.svg" />
+          <img
+            src="/icons/logo.svg"
+            alt="Logo Tokio Engenharia"
+            loading="lazy"
+          />
           <a href="mailto:contato@tokioengenharia.com.br?subject=Orçamento Tokio Engenharia&body=Olá, gostaria de fazer um orçamento">
             entre em contato
           </a>
@@ -248,7 +262,7 @@ export default function Home() {
           </aside>
 
           <section className="company-description">
-            <img src="/icons/star.svg" />
+            <img src="/icons/star.svg" alt="Icone de estrela" loading="lazy" />
             <p>
               Tokio é uma empresa do ramo de Engenharia Civil, que oferece
               serviços de gerenciamento de obras, projetos, construção, reformas
@@ -320,12 +334,20 @@ export default function Home() {
               </section>
               <div>
                 <div className="gradient" />
-                <img src="/images/building.png" />
+                <img
+                  src="/images/building.png"
+                  alt="Imagem de prédio"
+                  loading="lazy"
+                />
               </div>
             </aside>
 
             <div>
-              <img src="/images/building.png" />
+              <img
+                src="/images/building.png"
+                alt="Imagem de prédio"
+                loading="lazy"
+              />
             </div>
           </section>
         </Grid>
@@ -339,6 +361,7 @@ export default function Home() {
                 src="/images/valores.png"
                 alt="imagem de prédio"
                 className="first-vision-image"
+                loading="lazy"
               />
 
               <aside className="first-vision-text">
@@ -363,7 +386,11 @@ export default function Home() {
                   clientes.
                 </p>
               </aside>
-              <img src="/images/visao.png" alt="imagem de prédio" />
+              <img
+                src="/images/visao.png"
+                alt="imagem de prédio"
+                loading="lazy"
+              />
             </section>
           </Grid>
         </ThirdSection>
