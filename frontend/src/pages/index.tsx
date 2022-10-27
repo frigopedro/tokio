@@ -238,7 +238,7 @@ export default function Home() {
           <section>
             <aside>
               <section>
-                <div className="services-list1">
+                <div className="services-list">
                   <h1>Alvenaria</h1>
                   <p>
                     Et aliquip ad consectetur qui velit enim ea quis excepteur
