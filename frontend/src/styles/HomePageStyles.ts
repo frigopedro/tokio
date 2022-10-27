@@ -260,8 +260,6 @@ export const SecondSection = styled.div`
 `;
 
 export const ThirdSection = styled.div`
-  background-color: #161616;
-  padding-top: 100px;
   padding-bottom: 100px;
 
   display: flex;

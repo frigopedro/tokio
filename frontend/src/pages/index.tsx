@@ -97,6 +97,41 @@ export default function Home() {
         },
       }
     );
+
+    gsap.fromTo(
+      ".vision-container",
+      {
+        backgroundColor: " #F2F2F2",
+      },
+      {
+        backgroundColor: "#161616",
+
+        scrollTrigger: {
+          trigger: ".vision-container",
+          start: "top top",
+          end: "+=100",
+          scrub: true,
+          markers: true,
+        },
+      }
+    );
+    gsap.fromTo(
+      [".first-vision-h1-text", ".first-vision-p-text"],
+      {
+        color: " #161616",
+      },
+      {
+        color: "#f1f1f1",
+
+        scrollTrigger: {
+          trigger: ".vision-container",
+          start: "top top",
+          end: "+=100",
+          scrub: true,
+          markers: true,
+        },
+      }
+    );
     gsap.fromTo(
       ".first-vision-image",
       {
@@ -298,35 +333,43 @@ export default function Home() {
         </Grid>
       </SecondSection>
 
-      <ThirdSection>
-        <Grid>
-          <section ref={valoresReference}>
-            <img
-              src="/images/valores.png"
-              alt="imagem de prédio"
-              className="first-vision-image"
-            />
+      <div className="vision-container" style={{ paddingTop: "100px" }}>
+        <ThirdSection>
+          <Grid>
+            <section ref={valoresReference}>
+              <img
+                src="/images/valores.png"
+                alt="imagem de prédio"
+                className="first-vision-image"
+              />
 
-            <aside className="first-vision-text">
-              <h1 style={{ textAlign: "end" }}>Nossos valores</h1>
-              <p style={{ textAlign: "end" }}>
-                Visamos integridade, respeito, ousadia, sucesso, rentabilidade e
-                relacionamento humano.
-              </p>
-            </aside>
-          </section>
-          <section className="second-vision-image">
-            <aside className="second-vision-text">
-              <h1>Nossa visão</h1>
-              <p>
-                Uma empresa de destaque no que faz, com reconhecimento e
-                confiança no mercado e inspirando seus colaboradores e clientes.
-              </p>
-            </aside>
-            <img src="/images/visao.png" alt="imagem de prédio" />
-          </section>
-        </Grid>
-      </ThirdSection>
+              <aside className="first-vision-text">
+                <h1
+                  style={{ textAlign: "end" }}
+                  className="first-vision-h1-text"
+                >
+                  Nossos valores
+                </h1>
+                <p style={{ textAlign: "end" }} className="first-vision-p-text">
+                  Visamos integridade, respeito, ousadia, sucesso, rentabilidade
+                  e relacionamento humano.
+                </p>
+              </aside>
+            </section>
+            <section className="second-vision-image">
+              <aside className="second-vision-text">
+                <h1 className="first-vision-h1-text">Nossa visão</h1>
+                <p className="first-vision-p-text">
+                  Uma empresa de destaque no que faz, com reconhecimento e
+                  confiança no mercado e inspirando seus colaboradores e
+                  clientes.
+                </p>
+              </aside>
+              <img src="/images/visao.png" alt="imagem de prédio" />
+            </section>
+          </Grid>
+        </ThirdSection>
+      </div>
       <Grid>
         <Footer>
           <section>
