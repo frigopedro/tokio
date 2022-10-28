@@ -150,7 +150,7 @@ export const Container = styled.div`
 `;
 
 export const SecondSection = styled.div`
-  margin-top: clamp(20vh, 700px, 50vw);
+  margin-top: clamp(20vh, 300px, 50vw);
 
   .services-list {
     padding: 1rem;
