@@ -353,7 +353,10 @@ export default function Home() {
         </Grid>
       </SecondSection>
 
-      <div className="vision-container" style={{ paddingTop: "100px" }}>
+      <div
+        className="vision-container"
+        style={{ paddingTop: "100px", paddingBottom: "100px" }}
+      >
         <ThirdSection>
           <Grid>
             <section ref={valoresReference}>

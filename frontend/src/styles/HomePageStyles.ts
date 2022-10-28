@@ -151,6 +151,7 @@ export const Container = styled.div`
 
 export const SecondSection = styled.div`
   margin-top: 300px;
+  margin-top: 20vw;
 
   .services-list {
     padding: 1rem;
@@ -260,15 +261,16 @@ export const SecondSection = styled.div`
 `;
 
 export const ThirdSection = styled.div`
-  padding-bottom: 100px;
-
-  display: flex;
-  flex-direction: column;
+  min-height: 70vh;
 
   overflow: hidden;
+  display: flex;
+  align-items: center;
   > main {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    min-height: 50vh;
     gap: 2rem;
 
     > section {
