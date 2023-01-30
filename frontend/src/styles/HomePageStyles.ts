@@ -1,157 +1,163 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  .dark-background {
-    height: 100vh;
-    background-color: #161616;
-    width: 40%;
-    position: absolute;
-    z-index: -4;
-    right: 0%;
-    > main {
-      display: none;
-    }
-  }
-  .building-image {
-    position: absolute;
-    z-index: -3;
-    right: 0%;
-    bottom: 0%;
-    width: 50vw;
-    max-width: 1250px;
-  }
-
-  .header {
+export const Container = styled.div``;
+export const Header = styled.div`
+  main {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    padding-right: 0;
 
-    padding: 16px 0;
-
-    a {
-      text-decoration: none;
-      color: #fc6b24;
+    > img {
+      padding-top: 24px;
+      padding-bottom: 24px;
+      width: 300px;
     }
-  }
-  .user-container {
-    padding: 0.5rem 1.5rem;
-    border: 1px solid #333333;
-    border-radius: 100px;
-    display: inline-block;
-    > p {
-      color: #333333;
-    }
-  }
-
-  .main-text {
-    margin-top: 1rem;
-    h1 {
-      font-size: clamp(16px, 5.5vw, 80px);
-      max-width: 60%;
-    }
-
     > div {
-      margin-top: 100px;
-      display: flex;
-      gap: 2rem;
-    }
-    .main-button {
-      background-color: #fc6b24;
-      border: none;
-      border-radius: 100px;
-      color: white;
-      padding: 0.5rem 2rem;
-
-      box-shadow: 2px 2px 15px rgba(252, 107, 36, 0.25);
-    }
-
-    .secondary-button {
-      background-color: transparent;
-      border: none;
-      color: #fc6b24;
-    }
-  }
-  .first-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
-
-    > section {
-      margin-top: 10vh;
-      max-width: 332px;
+      width: 40%;
       background-color: #161616;
-      max-height: 220px;
-      border-radius: 25px;
-      padding: 1rem;
-      p {
-        color: #f1f1f1;
-      }
-    }
-  }
-
-  .building-image-mobile {
-    display: none;
-    width: 0px;
-  }
-  @media (max-width: 768px) {
-    .first-container {
-      margin-top: 1rem;
-      flex-direction: column;
-      justify-content: start;
-      align-items: flex-start;
-
-      > section {
-        display: none;
-      }
-    }
-    .main-text {
-      h1 {
-        font-size: 2.5rem;
-        max-width: 100%;
-        text-align: center;
-      }
-      > div {
-        justify-content: space-around;
-        margin-top: 2rem;
-      }
-    }
-    .dark-background {
-      width: 100vw;
-      height: 50vh;
-      top: clamp(450px, 50%, 50%);
-      padding-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      > main {
-        display: block;
-      }
-      p {
-        color: #f1f1f1;
-      }
-    }
-    .building-image-mobile {
-      margin-top: auto;
-      display: flex;
-      width: 100vw;
-    }
-
-    .building-image {
-      width: 100vw;
       @media (max-width: 768px) {
         display: none;
       }
     }
+  }
+`;
+export const FirstSection = styled.div`
+  .sidebar-black {
+    background-color: #161616;
+    position: absolute;
+    height: 60vh;
+    max-height: calc(1200px * 0.6);
+    left: calc((100vw - 1472px) / 2 + 1430px);
+    right: 0;
+    top: 0;
+    z-index: -1;
+    clip-path: polygon(0% 100%, 0% 0%, 100% 0%);
+  }
+  @media (max-width: 1472px) {
+    .sidebar-black {
+      display: none;
+    }
+  }
+  > main {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    max-height: 1200px;
+    top: 0;
+    margin: 0 auto;
+    position: relative;
+    padding-right: 0;
 
-    .user-container {
-      margin: 0 auto;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      display: block;
+      padding-left: 0;
+      justify-content: space-around;
+      gap: 1rem;
+    }
+
+    .building-image {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      padding: 32px;
+      padding-right: 0;
+      width: 100%;
+      padding-bottom: 0;
+      max-height: 60vh;
+    }
+
+    > main {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 100%;
+      max-height: 60%;
+      /* overflow: hidden; */
+      @media (max-width: 768px) {
+        padding: 0 16px;
+        max-height: 40%;
+        height: 100%;
+      }
+
+      > h1 {
+        margin-top: 200px;
+        font-size: clamp(16px, 60vw, 90px);
+        @media (max-width: 1260px) {
+          font-size: clamp(16px, 60vw, 70px);
+        }
+        @media (max-width: 1160px) {
+          font-size: clamp(16px, 60vw, 58px);
+        }
+
+        @media (max-width: 768px) {
+          margin-top: 0px;
+
+          font-size: clamp(16px, 60vw, 48px);
+          text-align: center;
+        }
+      }
+
+      > div {
+        margin-top: 100px;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        @media (max-width: 768px) {
+          margin-top: 20px;
+        }
+      }
+      .main-button {
+        background-color: #fc6b24;
+        border: none;
+        border-radius: 100px;
+        color: white;
+        display: block;
+        padding: 0.5rem 2rem;
+        font-size: 1rem;
+        box-shadow: 2px 2px 15px rgba(252, 107, 36, 0.25);
+        @media (max-width: 768px) {
+          font-size: 0.8rem;
+        }
+      }
+
+      .secondary-button {
+        background-color: transparent;
+        border: none;
+        color: #fc6b24;
+        font-size: 1rem;
+
+        @media (max-width: 768px) {
+          font-size: 0.8rem;
+        }
+      }
+    }
+    > aside {
+      background-color: #161616;
+      max-width: 40%;
+      min-width: 40%;
+      width: 100%;
+      padding: 16px;
+      height: 100%;
+      @media (max-width: 768px) {
+        max-width: 100%;
+        max-height: 60%;
+      }
+      > p {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+
+        color: #f1f1f1;
+      }
     }
   }
 `;
 
 export const SecondSection = styled.div`
-  margin-top: clamp(20vh, 300px, 50vw);
-
+  margin-top: 100px;
   .services-list {
     padding: 1rem;
     background-image: url(${"https://firebasestorage.googleapis.com/v0/b/depcom-a4032.appspot.com/o/tokio%2Fblocks.svg?alt=media&token=c8644ac8-6611-4f8b-934c-bb79bffbf1f7"});
@@ -212,12 +218,14 @@ export const SecondSection = styled.div`
       }
       > div {
         position: sticky;
-        top: 400px;
+        top: 0px;
         max-width: 900px;
-        max-height: 600px;
-        overflow: hidden;
+        height: 100vh;
 
+        overflow: hidden;
+        display: flex;
         img {
+          margin-top: auto !important;
           max-width: 800px;
           max-height: 600px;
         }

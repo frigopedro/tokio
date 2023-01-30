@@ -1,13 +1,15 @@
-import React, { useEffect, useRef } from "react";
+import { gsap, TimelineLite } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useEffect, useRef } from "react";
 import Grid from "../components/Grid";
 import {
   Container,
+  FirstSection,
   Footer,
+  Header,
   SecondSection,
   ThirdSection,
 } from "../styles/HomePageStyles";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { gsap, TimelineLite } from "gsap";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -188,98 +190,70 @@ export default function Home() {
 
   return (
     <Container>
-      <div className="dark-background" ref={firstSection}>
+      <Header className="header">
         <Grid>
-          <section className="company-description">
-            <img src="/icons/star.svg" alt="Ícone de estrela" loading="lazy" />
-            <p>
-              A Tokio é uma empresa do ramo de Engenharia Civil localizada em
-              São Bernardo do Campo, que oferece serviços de projetos,
-              construção, reformas comercial/industrial, e laudos técnicos.
-            </p>
-          </section>
-        </Grid>
-
-        <img
-          className="building-image-mobile"
-          src="/icons/building.png"
-          alt="Imagem de construção"
-          loading="lazy"
-        />
-      </div>
-      <img
-        className="building-image"
-        src="/icons/building.png"
-        alt="Imagem de construção"
-        loading="lazy"
-      />
-      <Grid>
-        <div className="header">
           <img
             src="/icons/logo.svg"
             alt="Logo Tokio Engenharia"
             loading="lazy"
           />
-          <a href="mailto:contato@tokioengenharia.com.br?subject=Orçamento Tokio Engenharia&body=Olá, gostaria de fazer um orçamento">
-            entre em contato
-          </a>
-        </div>
-      </Grid>
+          <div></div>
+        </Grid>
+      </Header>
 
-      <Grid>
-        <section className="first-container">
-          <aside>
-            <section className="user-container">
-              <p>Projetos de alto padrão</p>
-            </section>
-
-            <div className="main-text">
-              <h1 className="main-text-h1">
-                A consultoria de engenharia civil certa para você
-              </h1>
-
-              <div>
-                <button
-                  className="main-button"
-                  onClick={() => {
-                    openInNewTab(
-                      "whatsapp://send?text=" +
-                        "Gostaria de fazer um orçamento" +
-                        "&phone=+5511911647651"
-                    );
-                  }}
-                >
-                  Faça um orçamento
-                </button>
-                <button
-                  className="secondary-button"
-                  onClick={() => executeScroll(servicesReference)}
-                >
-                  Conheça nossos serviços
-                </button>
-              </div>
+      <FirstSection>
+        <div className="sidebar-black" />
+        <Grid>
+          <img
+            className="building-image"
+            src="/icons/building.png"
+            alt="Imagem de construção"
+            loading="lazy"
+          />
+          <main>
+            <h1>Concretizando sonhos</h1>
+            <div>
+              <button
+                className="main-button"
+                onClick={() => {
+                  openInNewTab(
+                    "whatsapp://send?text=" +
+                      "Gostaria de fazer um orçamento" +
+                      "&phone=+5511911647651"
+                  );
+                }}
+              >
+                Entre em contato
+              </button>
+              <button
+                className="secondary-button"
+                onClick={() => executeScroll(servicesReference)}
+              >
+                Projetos
+              </button>
             </div>
-          </aside>
+          </main>
 
-          <section className="company-description">
+          <aside>
             <img src="/icons/star.svg" alt="Icone de estrela" loading="lazy" />
+
             <p>
-              Tokio é uma empresa do ramo de Engenharia Civil, que oferece
-              serviços de gerenciamento de obras, projetos, construção, reformas
-              comercial/industrial, e laudos técnicos.
+              Somos especializados na execução de obras corporativas, comerciais
+              e edifícios de alto padrão. Entregamos com excelência projetos de
+              alto complexidade em todo território nacional.
             </p>
-          </section>
-        </section>
-      </Grid>
+          </aside>
+        </Grid>
+      </FirstSection>
 
       <SecondSection>
         <Grid>
           <div ref={servicesReference}>
-            <h1>Nosso serviços</h1>
-            <p>
+            <h1>Projetos</h1>
+            {/* <p>
               Conheça nosso serviços e como a tókio pode te ajudar a construir
               seu sonho
-            </p>
+            </p> */}
           </div>
 
           <section>

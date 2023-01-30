@@ -1,0 +1,9 @@
+{
+  "id": "obras",
+  "label": "obras",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {}
+  }
+}
