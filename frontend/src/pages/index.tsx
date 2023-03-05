@@ -269,8 +269,8 @@ export default function Home() {
                 <div className="services-list">
                   <h1>Alvenaria</h1>
                   <p>
-                    Et aliquip ad consectetur qui velit enim ea quis excepteur
-                    laborum occaecat ea minim est.
+                    Construção segura e durável de paredes de tijolo, blocos e
+                    pedra.
                   </p>
                 </div>
               </section>
@@ -279,8 +279,8 @@ export default function Home() {
                 <div className="services-list">
                   <h1>Fundação</h1>
                   <p>
-                    Et aliquip ad consectetur qui velit enim ea quis excepteur
-                    laborum occaecat ea minim est.
+                    Soluções personalizadas para garantir uma fundação forte o
+                    suficiente para suportar o peso da sua estrutura.
                   </p>
                 </div>
               </section>
@@ -289,8 +289,8 @@ export default function Home() {
                 <div className="services-list">
                   <h1>Contenção</h1>
                   <p>
-                    Et aliquip ad consectetur qui velit enim ea quis excepteur
-                    laborum occaecat ea minim est.
+                    Nós garantimos a estabilidade de solos, estruturas e
+                    encostas para proteger sua construção.
                   </p>
                 </div>
               </section>
@@ -299,8 +299,8 @@ export default function Home() {
                 <div className="services-list">
                   <h1>Estrutura metálica</h1>
                   <p>
-                    Et aliquip ad consectetur qui velit enim ea quis excepteur
-                    laborum occaecat ea minim est.
+                    Projetamos e fabricamos estruturas metálicas fortes, seguras
+                    e esteticamente agradáveis.
                   </p>
                 </div>
               </section>
@@ -308,8 +308,10 @@ export default function Home() {
                 <div className="services-list">
                   <h1>E muito mais</h1>
                   <p>
-                    Et aliquip ad consectetur qui velit enim ea quis excepteur
-                    laborum occaecat ea minim est.
+                    Oferecemos uma ampla variedade de serviços de consultoria de
+                    engenharia, incluindo planejamento, gerenciamento de
+                    projetos, avaliação estrutural, análise de sistemas
+                    mecânicos, elétricos e hidráulicos, entre outros.
                   </p>
                 </div>
               </section>
