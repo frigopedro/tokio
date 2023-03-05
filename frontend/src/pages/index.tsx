@@ -1,6 +1,7 @@
 import { gsap, TimelineLite } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import ContactUsModal from "../components/ContactUsModal";
 import Grid from "../components/Grid";
 import {
   Container,
@@ -23,6 +24,7 @@ export default function Home() {
   const openInNewTab = (url: string) => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
+  const [contactUsModal, setContactUsModal] = useState(false);
 
   useEffect(() => {
     let tl = new TimelineLite();
@@ -186,10 +188,14 @@ export default function Home() {
         },
       }
     );
-  });
+  }, []);
 
   return (
     <Container>
+      <ContactUsModal
+        isOpen={contactUsModal}
+        onRequestClose={() => setContactUsModal(false)}
+      />
       <Header className="header">
         <Grid>
           <img
@@ -215,13 +221,14 @@ export default function Home() {
             <div>
               <button
                 className="main-button"
-                onClick={() => {
-                  openInNewTab(
-                    "whatsapp://send?text=" +
-                      "Gostaria de fazer um orçamento" +
-                      "&phone=+5511911647651"
-                  );
-                }}
+                // onClick={() => {
+                //   openInNewTab(
+                //     "whatsapp://send?text=" +
+                //       "Gostaria de fazer um orçamento" +
+                //       "&phone=+5511911647651"
+                //   );
+                // }}
+                onClick={() => setContactUsModal(true)}
               >
                 Entre em contato
               </button>

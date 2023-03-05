@@ -163,9 +163,6 @@ export const SecondSection = styled.div`
     background-image: url(${"https://firebasestorage.googleapis.com/v0/b/depcom-a4032.appspot.com/o/tokio%2Fblocks.svg?alt=media&token=c8644ac8-6611-4f8b-934c-bb79bffbf1f7"});
   }
 
-  @media (max-width: 768px) {
-    margin-top: 650px;
-  }
   main {
     > div {
       margin: 0 auto;
