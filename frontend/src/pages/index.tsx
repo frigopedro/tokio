@@ -256,7 +256,7 @@ export default function Home() {
       <SecondSection>
         <Grid>
           <div ref={servicesReference}>
-            <h1>Projetos</h1>
+            <h1>O que fazemos?</h1>
             {/* <p>
               Conheça nosso serviços e como a tókio pode te ajudar a construir
               seu sonho

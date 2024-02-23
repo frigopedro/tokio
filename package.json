@@ -2,6 +2,7 @@
   "dependencies": {
     "gsap": "^3.11.3",
     "react-gsap": "^3.2.1",
+    "react-typed": "^1.2.0",
     "react-whatsapp": "^0.3.0"
   }
 }
