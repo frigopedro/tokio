@@ -1,6 +1,50 @@
 import styled from "styled-components";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #f1f1f1;
+  border-radius: 20px;
+  text-align: center;
+  width: 100vw;
+  height: 70vh;
+  overflow: hidden;
+  
+  
+  @media (min-width: 768px) {
+    width: 30vw;
+    min-width: 700px;
+
+  }
+}
+
+.modal-image {
+  width: 100%;
+  height: 700px;
+  max-height: 70%;
+  object-fit: cover;
+
+}
+
+.modal-text {
+  width: 100%;
+  text-align: start;
+  padding: 20px
+}
+`;
 export const Header = styled.div`
   main {
     display: flex;
@@ -68,6 +112,15 @@ export const FirstSection = styled.div`
       max-height: 60vh;
     }
 
+    .target {
+      position: absolute;
+      top: 25vh;
+      right: 0;
+      left: 0;
+      width: 200px;
+      padding-bottom: 0;
+      max-height: 200px;
+    }
     > main {
       display: flex;
       flex-direction: column;
@@ -348,3 +401,61 @@ export const Footer = styled.footer`
     margin-bottom: -1rem;
   }
 `;
+
+export const ForthSection = styled.div`
+.gallery {
+  padding-top: 40px;
+    > h1, p {
+        width: 92%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        color: black;
+        
+    }
+    .images {
+      margin-top: 40px;
+      display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+    }
+  
+
+    .image {
+      width: 49.5%;
+            display: flex;
+            overflow: hidden;
+            padding-top: 0;
+            height: 40vh;
+            object-fit: cover;
+            margin-top: 3px;
+        
+
+    }
+}
+
+@media(min-width: 1000px) {
+    .gallery {
+
+
+        .images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .image {
+            
+          width: 49.5%;
+            display: flex;
+            overflow: hidden;
+            padding-top: 0;
+            height: 40vh;
+            object-fit: cover;
+
+                
+        }
+    }
+}
+
+`

@@ -7,13 +7,20 @@ import {
   Container,
   FirstSection,
   Footer,
+  ForthSection,
   Header,
   SecondSection,
   ThirdSection,
 } from "../styles/HomePageStyles";
+import { AnimatePresence, motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
+interface ImagesGallery {
+  src: string;
+  title: string;
+  description: string;
+}
 export default function Home() {
   const servicesReference = useRef(null);
   const valoresReference = useRef(null);
@@ -26,7 +33,134 @@ export default function Home() {
   };
   const [contactUsModal, setContactUsModal] = useState(false);
 
+  const [selectedImage, setSelectedImage] = useState<ImagesGallery | null>(
+    null
+  );
+
+  //      <img className="image" src="./images/showcase1.jpg" />
+
+  const images: ImagesGallery[] = [
+    {
+      src: "./images/showcase1.jpg",
+      title: "Construção da Fundação",
+      description:
+        "Um processo meticuloso de fundação, destacando nossa expertise em garantir estabilidade estrutural e segurança para projetos de grande escala.",
+    },
+    {
+      src: "./images/showcase2.jpg",
+      title: "Sistema de Contenção de Terra",
+      description:
+        "Implementação de técnicas avançadas de contenção de terra, proporcionando suporte essencial e segurança durante escavações profundas.",
+    },
+    {
+      src: "./images/showcase3.jpg",
+      title: "Montagem de Estrutura Metálica",
+      description:
+        "Precisão em ação enquanto nossa equipe monta uma robusta estrutura metálica, preparando o terreno para uma construção durável e resiliente.",
+    },
+    {
+      src: "./images/showcase4.jpg",
+      title: "Instalação de Laje de Concreto Armado",
+      description:
+        "Preparando o terreno para força e longevidade, esta imagem captura nossa equipe em ação durante a instalação de uma laje de concreto armado.",
+    },
+    {
+      src: "./images/showcase6.jpg",
+      title: "Alvenaria e Andaimes",
+      description:
+        "Demonstrando nosso compromisso com a qualidade, esta imagem exibe a cuidadosa construção de paredes de tijolos, apoiadas por um sistema de andaimes bem projetado.",
+    },
+    {
+      src: "./images/showcase5.jpg",
+      title: "Instalação de Encanamento",
+      description:
+        "Um vislumbre de nossa abordagem meticulosa nas instalações hidráulicas, garantindo sistemas de água eficientes e confiáveis em cada projeto.",
+    },
+    {
+      src: "./images/showcase7.jpg",
+      title: "Sistema de Proteção Contra Incêndio",
+      description:
+        "Instalação de um sistema de proteção contra incêndio de última geração, crucial para garantir segurança e conformidade em edifícios comerciais e industriais.",
+    },
+    {
+      src: "./images/showcase8.jpg",
+      title: "Infraestrutura Interna",
+      description:
+        "Um olhar nos bastidores sobre a complexa rede de instalações elétricas e mecânicas que formam a espinha dorsal de edifícios modernos.",
+    },
+    {
+      src: "./images/showcase11.jpg",
+      title: "Painel de Controle Elétrico",
+      description:
+        "Engenharia de precisão em seu melhor, enquanto nossa equipe configura um painel de controle elétrico para garantir uma distribuição de energia confiável em todo o projeto.",
+    },
+    {
+      src: "./images/showcase9.jpg",
+      title: "Sistema de Gerenciamento de Cabos",
+      description:
+        "Gerenciamento eficaz de cabos em andamento, ilustrando nossa dedicação à organização e segurança nas instalações elétricas.",
+    },
+    {
+      src: "./images/showcase10.jpg",
+      title: "Sistema de Distribuição de Ar",
+      description:
+        "Instalação do sistema de distribuição de ar, essencial para a circulação adequada de ar em edifícios comerciais e industriais.",
+    },
+    {
+      src: "./images/showcase14.jpg",
+      title: "Quadro Elétrico",
+      description:
+        "Configuração de um quadro elétrico avançado, garantindo que a distribuição de energia seja feita de forma segura e eficiente.",
+    },
+    {
+      src: "./images/showcase13.jpg",
+      title: "Infraestrutura de Condomínios",
+      description:
+        "Desenvolvimento de infraestrutura em condomínios, garantindo acesso a serviços essenciais e conectividade para todos os moradores.",
+    },
+    {
+      src: "./images/showcase12.jpg",
+      title: "Instalação de Tubulações",
+      description:
+        "Processo de instalação de tubulações em ambientes industriais, garantindo a condução eficiente de fluidos e gases.",
+    },
+  ];
+
   useEffect(() => {
+    ScrollTrigger.saveStyles(".image");
+
+    ScrollTrigger.matchMedia({
+      "(min-width:200px)": function () {
+        var grids = document.querySelectorAll(".images");
+
+        grids.forEach(function (grid) {
+          var imageEffect = gsap.timeline({
+            scrollTrigger: {
+              trigger: grid,
+              start: "top 20%",
+              end: "bottom 20%",
+              scrub: 1,
+            },
+          });
+
+          var allImages = grid.querySelectorAll(".image"),
+            $largeImages = grid.querySelectorAll(
+              ".image:nth-child(4n), .image:nth-child(4n+1)"
+            ),
+            $smallImages = [...allImages].filter(
+              (f) => ![...$largeImages].includes(f)
+            );
+
+          imageEffect
+            .to($smallImages, { duration: 2, width: "33%", ease: "power1" })
+            .to(
+              $largeImages,
+              { duration: 2, width: "66%", ease: "power1" },
+              "<"
+            );
+        });
+      },
+    });
     let tl = new TimelineLite();
     let tl2 = new TimelineLite();
 
@@ -217,7 +351,8 @@ export default function Home() {
             loading="lazy"
           />
           <main>
-            <h1>Concretizando sonhos</h1>
+            <h1>Construindo Legados</h1>
+            <img className="target" src="/images/target.png" alt="" />
             <div>
               <button
                 className="main-button"
@@ -245,9 +380,10 @@ export default function Home() {
             <img src="/icons/star.svg" alt="Icone de estrela" loading="lazy" />
 
             <p>
-              Somos especializados na execução de obras corporativas, comerciais
-              e edifícios de alto padrão. Entregamos com excelência projetos de
-              alto complexidade em todo território nacional.
+              Especialistas em dar vida a estruturas complexas e projetos
+              desafiadores. Da concepção ao acabamento, cada etapa é conduzida
+              com rigor técnico e atenção ao detalhe, garantindo resultados que
+              não apenas atendem, mas superam expectativas.
             </p>
           </aside>
         </Grid>
@@ -256,11 +392,11 @@ export default function Home() {
       <SecondSection>
         <Grid>
           <div ref={servicesReference}>
-            <h1>O que fazemos?</h1>
-            {/* <p>
+            <h1>Especializados</h1>
+            <p>
               Conheça nosso serviços e como a tókio pode te ajudar a construir
               seu sonho
-            </p> */}
+            </p>
           </div>
 
           <section>
@@ -382,16 +518,50 @@ export default function Home() {
         </ThirdSection>
       </div>
       <Grid>
+        <Container>
+          <span>
+            <ForthSection>
+              <div className="gallery">
+                <h1>Nossos Projetos</h1>
+                <p>
+                  Conheça alguns dos nossos projetos em andamento e concluídos.
+                </p>
+                <div className="images">
+                  {images.map((src, index) => (
+                    <motion.img
+                      key={index}
+                      src={src.src}
+                      className="image"
+                      onClick={() => setSelectedImage(src)}
+                      whileHover={{ scale: 1.01 }}
+                      layoutId={src.src}
+                    />
+                  ))}
+                </div>
+              </div>
+            </ForthSection>
+          </span>
+        </Container>
+      </Grid>
+      <Grid>
         <Footer>
           <section>
             <div>
               <h1>Tokio engenharia</h1>
               <p>
-                Uma empresa do ramo de Engenharia Civil, que oferece serviços de
-                gerenciamento de obras, projetos, construção e reformas.
+                A Tokio Engenharia iniciou suas atividades em 2012 e de lá para
+                cá, já executou diversas obras e tem se destacado pela qualidade
+                dos serviços que executa, resultando em excelentes índices de
+                satisfação de seus clientes. Com mais de 12 anos de experiência
+                na construção civil, atendendo aos diversos segmentos do mercado
+                e produzindo, especialmente, empreendimentos que se destacam
+                pela qualidade e inovação arquitetônica. Sempre com conceito de
+                modernidade, o principal objetivo são os projetos que se adequam
+                ao estilo e necessidade de cada cliente. adequam ao estilo e
+                necessidade de cada cliente.
               </p>
               <address>
-                Rua Édson de Castro pinto, 43 - Vila Olímpia-SP <br /> CEP:
+                Rua Édson de Castro pinto, 44 - Vila Olímpia-SP <br /> CEP:
                 04545-070
               </address>
             </div>
@@ -436,6 +606,30 @@ export default function Home() {
           </p>
         </Footer>
       </Grid>
+
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            className="modal"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.div className="modal-content" layoutId="selected-image">
+              <motion.img
+                src={selectedImage.src}
+                className="modal-image"
+                layoutId={selectedImage.src}
+              />
+              <div className="modal-text">
+                <h1>{selectedImage.title}</h1>
+                <p>{selectedImage.description}</p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </Container>
   );
 }
